@@ -5,8 +5,8 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
+    --primary-color: #60a5fa;
+    --secondary-color: #3b82f6;
     --text-dark: #1f2937;
     --text-light: #6b7280;
     --bg-light: #f9fafb;
@@ -442,16 +442,6 @@ body {
 }
 
 /* Contact Section */
-.contact-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.contact-content p {
-    font-size: 1.2rem;
-    color: var(--text-light);
-}
 
 /* Footer */
 .footer {
