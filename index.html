@@ -3,10 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Algarvio</title>
+    <title>Jorge Algarvio - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to my page</h1>
-    <p>This is my GitHub Pages site.</p>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Jorge Miguel Nobre Amaral Algarvio</div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Hello, I'm <span class="highlight">Jorge Algarvio</span></h1>
+            <p class="subtitle">Your Professional Title | Your Specialization</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="path-to-your-resume.pdf" class="btn btn-secondary" download>Download CV</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>Write a brief introduction about yourself, your passion, and what drives you professionally. Mention your key skills and what makes you unique in your field.</p>
+                <p>Add more paragraphs as needed to tell your story.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-grid">
+                <!-- Experience Item 1 -->
+                <div class="experience-item">
+                    <div class="company-logo">
+                        <a href="https://www.company1.com" target="_blank" rel="noopener">
+                            <img src="https://logo.clearbit.com/company1.com" alt="Company 1" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%23999%22%3ELogo%3C/text%3E%3C/svg%3E'">
+                        </a>
+                    </div>
+                    <div class="experience-details">
+                        <h3>Job Title</h3>
+                        <h4><a href="https://www.company1.com" target="_blank" rel="noopener">Company Name</a></h4>
+                        <p class="date">Month Year - Present</p>
+                        <ul class="responsibilities">
+                            <li>Key responsibility or achievement</li>
+                            <li>Another important contribution</li>
+                            <li>Notable project or result</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="experience-item">
+                    <div class="company-logo">
+                        <a href="https://www.company2.com" target="_blank" rel="noopener">
+                            <img src="https://logo.clearbit.com/company2.com" alt="Company 2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%23999%22%3ELogo%3C/text%3E%3C/svg%3E'">
+                        </a>
+                    </div>
+                    <div class="experience-details">
+                        <h3>Previous Job Title</h3>
+                        <h4><a href="https://www.company2.com" target="_blank" rel="noopener">Previous Company</a></h4>
+                        <p class="date">Month Year - Month Year</p>
+                        <ul class="responsibilities">
+                            <li>Key responsibility or achievement</li>
+                            <li>Another important contribution</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Add more experience items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <!-- Education Item 1 -->
+                <div class="education-item">
+                    <div class="school-logo">
+                        <a href="https://www.university.edu" target="_blank" rel="noopener">
+                            <img src="https://logo.clearbit.com/university.edu" alt="University" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%23999%22%3ELogo%3C/text%3E%3C/svg%3E'">
+                        </a>
+                    </div>
+                    <div class="education-details">
+                        <h3>Degree Name</h3>
+                        <h4><a href="https://www.university.edu" target="_blank" rel="noopener">University Name</a></h4>
+                        <p class="date">Year - Year</p>
+                        <p class="description">Major, specialization, or notable achievements</p>
+                    </div>
+                </div>
+
+                <!-- Add more education items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Certifications & Badges</h2>
+            <div class="certifications-grid">
+                <!-- Certification Item 1 -->
+                <div class="cert-item">
+                    <div class="cert-badge">
+                        <img src="path-to-badge-1.png" alt="Certification Name">
+                    </div>
+                    <h3>Certification Name</h3>
+                    <p class="cert-issuer">Issuing Organization</p>
+                    <p class="cert-date">Issued: Month Year</p>
+                    <a href="credential-url" target="_blank" rel="noopener" class="cert-link">View Credential</a>
+                </div>
+
+                <!-- Certification Item 2 -->
+                <div class="cert-item">
+                    <div class="cert-badge">
+                        <img src="path-to-badge-2.png" alt="Certification Name">
+                    </div>
+                    <h3>Another Certification</h3>
+                    <p class="cert-issuer">Issuing Organization</p>
+                    <p class="cert-date">Issued: Month Year</p>
+                    <a href="credential-url" target="_blank" rel="noopener" class="cert-link">View Credential</a>
+                </div>
+
+                <!-- Add more certifications as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always open to discussing new opportunities, interesting projects, or partnerships.</p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-item">
+                        <span class="icon">✉</span>
+                        your.email@example.com
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="contact-item">
+                        <span class="icon">💼</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="contact-item">
+                        <span class="icon">💻</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
