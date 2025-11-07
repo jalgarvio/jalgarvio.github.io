@@ -12,6 +12,64 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// See More button for Experience section
+const experienceSeeMoreBtn = document.getElementById('experienceSeeMore');
+const hiddenExperiences = document.querySelectorAll('.hidden-experience');
+
+if (experienceSeeMoreBtn && hiddenExperiences.length > 0) {
+    experienceSeeMoreBtn.addEventListener('click', function() {
+        const isExpanded = this.textContent === 'See Less';
+        
+        hiddenExperiences.forEach(item => {
+            item.style.display = isExpanded ? 'none' : 'flex';
+        });
+        
+        this.textContent = isExpanded ? 'See More' : 'See Less';
+    });
+}
+
+// Certifications carousel
+const certTrack = document.getElementById('certTrack');
+const certPrevBtn = document.getElementById('certPrev');
+const certNextBtn = document.getElementById('certNext');
+
+if (certTrack && certPrevBtn && certNextBtn) {
+    let currentPosition = 0;
+    const itemWidth = 280 + 32; // card width + gap
+    const visibleCards = () => {
+        const width = window.innerWidth;
+        if (width < 768) return 1;
+        if (width < 1024) return 2;
+        return 3;
+    };
+
+    const updateCarousel = () => {
+        certTrack.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+    };
+
+    certNextBtn.addEventListener('click', () => {
+        const totalCards = certTrack.children.length;
+        const maxPosition = totalCards - visibleCards();
+        if (currentPosition < maxPosition) {
+            currentPosition++;
+            updateCarousel();
+        }
+    });
+
+    certPrevBtn.addEventListener('click', () => {
+        if (currentPosition > 0) {
+            currentPosition--;
+            updateCarousel();
+        }
+    });
+
+    // Reset position on window resize
+    window.addEventListener('resize', () => {
+        currentPosition = 0;
+        updateCarousel();
+    });
+}
+
 // Add scroll animation to sections
 const observerOptions = {
     threshold: 0.1,
