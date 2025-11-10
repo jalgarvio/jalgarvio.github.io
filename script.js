@@ -35,7 +35,10 @@ const certNextBtn = document.getElementById('certNext');
 
 if (certTrack && certPrevBtn && certNextBtn) {
     let currentPosition = 0;
-    const itemWidth = 280 + 32; // card width + gap
+    const itemWidth = 280; // card width
+    const gap = 32; // gap between cards
+    const scrollAmount = itemWidth + gap;
+    
     const visibleCards = () => {
         const width = window.innerWidth;
         if (width < 768) return 1;
@@ -44,12 +47,24 @@ if (certTrack && certPrevBtn && certNextBtn) {
     };
 
     const updateCarousel = () => {
-        certTrack.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+        certTrack.style.transform = `translateX(-${currentPosition * scrollAmount}px)`;
+        
+        // Update button states
+        certPrevBtn.disabled = currentPosition === 0;
+        const totalCards = certTrack.children.length;
+        const maxPosition = Math.max(0, totalCards - visibleCards());
+        certNextBtn.disabled = currentPosition >= maxPosition;
+        
+        // Visual feedback for disabled buttons
+        certPrevBtn.style.opacity = certPrevBtn.disabled ? '0.3' : '1';
+        certPrevBtn.style.cursor = certPrevBtn.disabled ? 'not-allowed' : 'pointer';
+        certNextBtn.style.opacity = certNextBtn.disabled ? '0.3' : '1';
+        certNextBtn.style.cursor = certNextBtn.disabled ? 'not-allowed' : 'pointer';
     };
 
     certNextBtn.addEventListener('click', () => {
         const totalCards = certTrack.children.length;
-        const maxPosition = totalCards - visibleCards();
+        const maxPosition = Math.max(0, totalCards - visibleCards());
         if (currentPosition < maxPosition) {
             currentPosition++;
             updateCarousel();
@@ -64,10 +79,17 @@ if (certTrack && certPrevBtn && certNextBtn) {
     });
 
     // Reset position on window resize
+    let resizeTimer;
     window.addEventListener('resize', () => {
-        currentPosition = 0;
-        updateCarousel();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            currentPosition = 0;
+            updateCarousel();
+        }, 250);
     });
+    
+    // Initialize
+    updateCarousel();
 }
 
 // Add scroll animation to sections
