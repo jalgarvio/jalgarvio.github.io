@@ -581,9 +581,14 @@ body {
     line-height: 1;
 }
 
-.carousel-btn:hover {
+.carousel-btn:hover:not(:disabled) {
     background: var(--secondary-color);
     transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
 }
 
 .carousel-btn.prev {
@@ -608,7 +613,11 @@ body {
     box-shadow: var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
     min-width: 280px;
+    max-width: 280px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
 }
 
 .cert-item:hover {
@@ -629,9 +638,11 @@ body {
 }
 
 .cert-item h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-dark);
     margin-bottom: 0.5rem;
+    line-height: 1.3;
+    min-height: 2.6rem;
 }
 
 .cert-issuer {
@@ -644,6 +655,10 @@ body {
     color: var(--text-light);
     font-size: 0.9rem;
     margin-bottom: 1rem;
+}
+
+.cert-link, .cert-link-disabled {
+    margin-top: auto;
 }
 
 .cert-link {
@@ -731,7 +746,28 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-white);
+        box-shadow: var(--shadow);
+        padding: 1rem 0;
         display: none;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-brand {
+        display: none;
+    }
+    
+    .navbar .container {
+        justify-content: center;
     }
     
     .hero-content {
